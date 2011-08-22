@@ -2,8 +2,14 @@ class GamesController < ApplicationController
   # GET /games
   # GET /games.xml
   def index
-    @games = Game.all
-
+    genre = params[:genre]
+    
+    if genre.blank?
+      @games = Game.all
+    else
+      @games = Game.where(:genre => genre)
+    end
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @games }

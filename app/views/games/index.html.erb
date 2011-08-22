@@ -1,6 +1,10 @@
 <h1>Listing games</h1>
 
-<table>
+<%= content_for :side do%>
+<%= render :partial => "sidebar" %>
+<% end %>
+
+<table class="common-table zebra-striped">
   <tr>
     <th>Name</th>
     <th>Description</th>
