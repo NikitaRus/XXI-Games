@@ -1,5 +1,3 @@
-<ul>
   <% Game::GENRES.each do |genre| %>
-  <li><%= link_to genre.capitalize, games_path( :genre => genre) %>
-  <% end %>
-</ul>
+    | <%= link_to genre.capitalize, games_path( :genre => genre) %>
+  <% end %>|
