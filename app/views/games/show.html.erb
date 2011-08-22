@@ -1,25 +1,17 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <b>Name:</b>
   <%= @game.name %>
 </p>
 
-<p>
-  <b>Description:</b>
-  <%= @game.description %>
-</p>
-
-<p>
-  <b>Url:</b>
-  <%= @game.url %>
-</p>
-
-<p>
-  <b>Provider:</b>
-  <%= @game.provider %>
-</p>
-
+<object id="FlashGame" wmode="opaque" codebase=
+  "http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0"
+  width="100%" height="100%">
+  <param name="allowFullScreen" value="true" />
+  <param name="movie" value="<%=@game.url%>" />
+  <param name="wmode" value="opaque" />
+  <param name="quality" value="high" />
+  <embed wmode="opaque" src="<%=@game.url%>" allowfullscreen="true" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="100%" height="100%" class="FlashGame" id="FlashGame2" />
+</object>
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>
